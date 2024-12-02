@@ -20,6 +20,7 @@ head -> {data: 10, next} -> NULL
           First:1001        Second:1005
         (memory address)  (memory address)
 ```
+## 描述程式碼的運作流程
 - 主程式初始化head
 ```
 #include<stdio.h>
