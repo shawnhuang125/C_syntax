@@ -1,22 +1,29 @@
-# Linked List
-- 鏈結串列的演示圖
-```
-head -> 10 -> 20 -> 30 -> NULL
-```
-## 演示增加節點的流程
-- 只有head的時候
+# Linked List鏈結串列
+> 鏈結串列主要分為四個步驟
+
+> create-->add-->insert-->delete
+
+> create是從0到1去建立鏈結串列
+
+> add是已經在1(初始化鏈結串列)之後要加入新的節點
+
+> insert是在已經建立完的鏈結串列之下,指定節點去加入新節點
+
+> delete是刪除已經建立好的鏈結串列裡面的指定節點
+
+> 像這種鏈結串列需要用到雙重指標,因為他是先使用指標先製作一個串列,再讓每個節點都帶上一個位址。
+## 鏈結串列製作流程
+- **Create linked list 建立鏈結串列**:初始化鏈結串列(0-1)
 ```
 head -> NULL
 ```
-- 加了第一個節點後
+- **Add Node新增節點**:在create完成後的鏈結串列之後再加入新的節點
 ```
-head -> {data: 10, next} -> NULL
-            First:1001
-        (memory address)
+head -> 10 -> NULL
 ```
-- 加了第二個的時候
+- Add了第二個的時候
 ```
-10     ->     20       ->      30        ->   NULL
+head -> 	10     ->     20        ->      30        ->   NULL
           First:1001        Second:1005
         (memory address)  (memory address)
 ```
