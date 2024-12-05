@@ -27,8 +27,8 @@ head -> 	10     ->     20        ->   NULL
           First:1001        Second:1005
         (memory address)  (memory address)
 ```
-## 描述程式碼的運作流程
-	- 使用struct定義結構方便後續使用結構
+## 程式碼編寫
+- 使用struct定義結構方便後續使用結構
 	```
 	struct node {
 		int data;
