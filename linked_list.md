@@ -28,7 +28,7 @@ head -> 	10     ->     20        ->   NULL
         (memory address)  (memory address)
 ```
 ## 程式碼編寫
-- 使用struct定義結構方便後續使用結構
+- 使用struct定義結構方便後續使用結構體
 	```
 	struct node {
 		int data;
