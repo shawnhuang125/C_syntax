@@ -52,7 +52,7 @@ head -> 	10     ->     20        ->   NULL
 - 定義一個新增節點的函數
 	- 程式碼重點:只要會用到結構體的變數一定要用struct
 	 ```
- 	struct node* [variable ]
+ 	struct node* [variable]
 	```
   	- 一定要想清楚適用原本的指標還是搜尋後已經更新的指標
   	```
