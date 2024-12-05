@@ -54,6 +54,10 @@ head -> 	10     ->     20        ->   NULL
 	 ```
  	struct node* [variable ]
 	```
+  	- 一定要想清楚適用原本的指標還是搜尋後已經更新的指標
+  	```
+   	*head = newnode; or temp->next = newnode;
+   	```
 	- 如果head指向的下一個位址為NULL則新增結點到head後面,反之就一直往下搜尋node值到最後一個node的指向位址為NULL
 	```
  	struct node* createnode(int node_data){
