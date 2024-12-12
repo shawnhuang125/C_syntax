@@ -142,3 +142,89 @@ head -> 	10     ->     20        ->   NULL
 	```
 	10  --->   20  --->   30  --->   NULL
 	```
+ - 練習:建立一鏈結串列, 有三個節點, 其值分別為24,36,48
+ - 程式碼:
+	```
+	#include<stdio.h>
+	#include<stdlib.h>
+	struct node {
+		//定義linked list結構 
+		int data;
+		struct node* next;
+	} node;
+	struct node* createnode(int node_data){
+		struct node* newnode = (struct node*)malloc(sizeof(struct node));
+		if(newnode==NULL){
+			printf("Memory Allocation Failed!");
+			exit(1);
+		}
+		newnode->data = node_data;
+		newnode->next = NULL;
+		return newnode;
+	}
+	int addnode(struct node** head,int node_data){
+		struct node* newnode = createnode(node_data);
+		if(*head == NULL){
+		//如果加入新節點 
+		*head = newnode;
+		}else{
+			//找到最後一個節點並加入新節點
+			struct node* temp = *head;
+			while(temp->next!=NULL){
+				temp = temp->next;
+			} 
+			temp->next = newnode;
+			//*head = newnode;
+		}
+	
+	}
+	int printlist(struct node* head){
+		struct node* temp = head;
+		printf("head   --->   ");
+		while(temp != NULL){
+			printf("%d   --->   ", temp->data); 
+			temp = temp->next; 
+		}
+		printf("NULL\n");
+	}
+	int main(){
+		//初始化linked list  
+		struct node* head = NULL;
+		int i;
+		while(i!=5){
+				printf("Description:\n1: Add node in the end;\n2: To see the list;\n3: Insert a node in the middle of the linked list;\n4: To delete a particular node;\n5: Exist\n");
+				printf("\n");
+				printf("please insert a num:");
+				scanf("%d",&i);
+			if(i==1){
+				//addnode
+				printf("Loading to.....Addnode,please insert data to add node:");
+				int insert_data;
+				scanf("%d",&insert_data);
+				addnode(&head,insert_data);
+			}else if(i==2){
+				//to see the list
+				printf("Loading to.....To see the list\n");
+				printf("Linked list:");
+				printlist(head);
+			}else if(i==3){
+				//Insert a node in the middle of the linked list
+				printf("Loading to.....Insert a node in the middle of the linked list\n");
+			}else if(i==4){
+				//To delete a particular node
+				printf("Loading to.....To delete a particular node\n");
+			}else if (i==5){
+				//Exist
+				printf("Existing....\n");
+			
+			}else{
+				printf("Insert Error\n");
+			}
+			printf("\n");
+		}
+	
+	
+		return 0;
+	}
+	```
+
