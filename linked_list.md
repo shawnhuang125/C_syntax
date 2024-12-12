@@ -41,8 +41,11 @@ head -> 	10     ->     20        ->   NULL
 	```
 	int main(){
 		//初始化linked list的head
+ 		//只要是使用struct定義新的結構運算變數就一定要加上struct node*
 		struct node* head = NULL;
+ 		//這邊是return NULL回傳空的數值
 		return 0;
+ 
 	}
 	```
 	- 為甚麼要初始化head?因為如果沒有head,linked list將無法借助任何指標當作起點來輸入數據,沒有這個將會顯示錯誤
@@ -67,6 +70,7 @@ head -> 	10     ->     20        ->   NULL
  	}
  	newnode->data = node_data;
  	newnode->next = NULL;
+ 	//這邊如果是return 0就會回傳空的數值,所以一定要return newnode這樣新的節點位址才會更新
  	return newnode;
 	}
 	int AddEnd(struct node** head,int node_data){
@@ -76,22 +80,44 @@ head -> 	10     ->     20        ->   NULL
 			//如果節點為空就在head後新增節點
 			*head = newnode;
 		}else{
-			//反之如果節點的指標都不為空搜尋最後一個node(因為最後一個node的next為NULL)
+ 			//邏輯是當節點指向下一個地位址不為空則印出該節點,直到節點下一個地位址為空
 			struct node* temp = *head;
 			while(temp->next!=NULL){
 				temp = temp->next;
 			}
 			//搜尋到最後一個node->next指標為NULL的時候就加入新節點
+ 			//一定要將temp的指向下一個位址的位址值傳給newnode,這樣節點的位址才會更新
 			temp->next = newnode;	
 		}
 	
 	}
 	```
+ 	- 如果temp->next = newnode改成 *head = newnode會變成就算head後面已經有新節點,如果還是設定*head = newnode的話,每次都只會取代掉head後面的節點,並不會在head後面的尾端又再新增節點
+	```
+ 	int AddEnd(struct node** head,int node_data){
+		//node**是指標的指標,第一層指標是node(每個節點)第二層指標是node->next(結點內部的next指標)
+		struct node* newnode = createnode(node_data);
+		if(*head==NULL){
+			//如果節點為空就在head後新增節點
+			*head = newnode;
+		}else{
+ 			//邏輯是當節點指向下一個地位址不為空則印出該節點,直到節點下一個地位址為空
+			struct node* temp = *head;
+			while(temp->next!=NULL){
+				temp = temp->next;
+			}
+			*head = newnode;	
+		}
+	
+	}
+ 	
+ 	```
 - 列印linked list
 	```
 	int PrintList(struct node* head){
 		printf("head   --->   ");
 		struct node* temp = head;
+ 		//邏輯是當節點指向下一個地位址不為空則印出該節點,直到節點下一個地位址為空
 		while(temp!=NULL){
 			printf("%d   --->   ",temp->data);
 			temp = temp->next;
