@@ -227,4 +227,61 @@ head -> 	10     ->     20        ->   NULL
 		return 0;
 	}
 	```
+ 	- 輸出:
+   	```
+    	Description:
+	1: Add node in the end;
+	2: To see the list;
+	3: Insert a node in the middle of the linked list;
+	4: To delete a particular node;
+	5: Exist
+
+	please insert a num:1
+	Loading to.....Addnode,please insert data to add node:24
+
+	Description:
+	1: Add node in the end;
+	2: To see the list;
+	3: Insert a node in the middle of the linked list;
+	4: To delete a particular node;
+	5: Exist
+
+	please insert a num:1
+	Loading to.....Addnode,please insert data to add node:36
+
+	Description:
+	1: Add node in the end;
+	2: To see the list;
+	3: Insert a node in the middle of the linked list;
+	4: To delete a particular node;
+	5: Exist
+
+	please insert a num:1
+	Loading to.....Addnode,please insert data to add node:48
+
+	Description:
+	1: Add node in the end;
+	2: To see the list;
+	3: Insert a node in the middle of the linked list;
+	4: To delete a particular node;
+	5: Exist
+
+	please insert a num:2
+	Loading to.....To see the list
+	Linked list:head   --->   24   --->   36   --->   48   --->   NULL
+
+	Description:
+	1: Add node in the end;
+	2: To see the list;
+	3: Insert a node in the middle of the linked list;
+	4: To delete a particular node;
+	5: Exist
+
+	please insert a num:5
+	Existing....
+
+
+	--------------------------------
+	Process exited after 20.46 seconds with return value 0
+   	```
 
