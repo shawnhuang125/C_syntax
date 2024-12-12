@@ -129,7 +129,7 @@ head -> 	10     ->     20        ->   NULL
  - 主程式呼叫
 	```
 	int main(){
-		//定義linked list的初始值 
+		//使用struct定義linked list的初始值, `struct node* [argunment] = NULL;`
 		struct node* head = NULL;
 		AddEnd(&head,10);
 		AddEnd(&head,20);
