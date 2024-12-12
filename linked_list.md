@@ -92,7 +92,7 @@ head -> 	10     ->     20        ->   NULL
 	
 	}
 	```
- 	- 如果temp->next = newnode改成 *head = newnode會變成就算head後面已經有新節點,如果還是設定*head = newnode的話,每次都只會取代掉head後面的節點,並不會在head後面的尾端又再新增節點
+ 	- 如果`temp->next = newnode`改成 `*head = newnode`會變成就算head後面已經有新節點,如果還是設定`*head = newnode`的話,每次都只會取代掉head後面的節點,並不會在head後面的尾端又再新增節點
 	```
  	int AddEnd(struct node** head,int node_data){
 		//node**是指標的指標,第一層指標是node(每個節點)第二層指標是node->next(結點內部的next指標)
