@@ -1,7 +1,9 @@
 # Linked List鏈結串列
-> 鏈結串列主要分為四個步驟
-
-> create-->add-->insert-->delete
+> 鏈結串列主要分為四個動作:
+> create node
+> add node
+> insert node
+> delete node
 
 > create是從0到1去建立鏈結串列
 
